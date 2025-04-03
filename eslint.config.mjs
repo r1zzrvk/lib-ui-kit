@@ -26,8 +26,6 @@ export default defineConfig([{
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "prettier",
-        // "airbnb",
-        // "airbnb/hooks",
         "plugin:import/errors",
         "plugin:import/warnings",
     )),
@@ -73,7 +71,9 @@ export default defineConfig([{
         'vite.config.ts',
         'postcss.config.cjs',
         'eslint.config.mjs',
-        '.storybook/**'
+        'tsconfig.app.json',
+        '.storybook/**',
+        'coverage/**'
     ],
     rules: {
         "react/function-component-definition": [2, {

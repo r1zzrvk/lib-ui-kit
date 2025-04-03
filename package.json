@@ -10,7 +10,10 @@
     "type-check": "tsc",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "full-test": "vitest run --coverage && eslint . --fix && tsc"
   },
   "dependencies": {
     "@mantine/core": "^7.17.3",
