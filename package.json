@@ -10,21 +10,16 @@
     "type-check": "tsc",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "prepare": "husky"
+    "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@commitlint/cli": "^19.8.0",
-    "@commitlint/config-conventional": "^19.8.0",
     "@mantine/core": "^7.17.3",
     "@mantine/hooks": "^7.17.3",
-    "branchlint": "^0.0.2",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-prettier": "^5.2.6",
     "eslint-plugin-react": "^7.37.4",
-    "husky": "^9.1.7",
     "prettier": "^3.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

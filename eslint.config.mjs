@@ -8,7 +8,6 @@ import reactHooks from "eslint-plugin-react-hooks";
 import globals from "globals";
 import tsParser from "@typescript-eslint/parser";
 import path from "node:path";
-import commitlint from "@commitlint/cli"
 import { fileURLToPath } from "node:url";
 import js from "@eslint/js";
 import { FlatCompat } from "@eslint/eslintrc";
@@ -38,7 +37,6 @@ export default defineConfig([{
         import: fixupPluginRules(_import),
         react: fixupPluginRules(react),
         prettier,
-        "@commitlint": fixupPluginRules(commitlint),
         'react-hooks': fixupPluginRules(reactHooks)
     },
     languageOptions: {
@@ -69,8 +67,6 @@ export default defineConfig([{
         'build/',
         'node_modules/',
         '.prettierrc.json',
-        'commitlint.config.js',
-        'next.config.js',
         'tsconfig.tsbuildinfo',
         'vitest.workspace.ts',
         'vitest.config.ts',
