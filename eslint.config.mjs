@@ -5,6 +5,7 @@ import _import from "eslint-plugin-import";
 import react from "eslint-plugin-react";
 import prettier from "eslint-plugin-prettier";
 import reactHooks from "eslint-plugin-react-hooks";
+import { tsconfigPaths} from "tsconfig-paths-webpack-plugin"
 import globals from "globals";
 import tsParser from "@typescript-eslint/parser";
 import path from "node:path";
@@ -35,7 +36,7 @@ export default defineConfig([{
         import: fixupPluginRules(_import),
         react: fixupPluginRules(react),
         prettier,
-        'react-hooks': fixupPluginRules(reactHooks)
+        'react-hooks': fixupPluginRules(reactHooks),
     },
     languageOptions: {
         globals: {
@@ -73,7 +74,8 @@ export default defineConfig([{
         'eslint.config.mjs',
         'tsconfig.app.json',
         '.storybook/**',
-        'coverage/**'
+        'coverage/**',
+        "EXAMPLE/**"
     ],
     rules: {
         "react/function-component-definition": [2, {
