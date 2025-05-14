@@ -1,5 +1,6 @@
 import { Button as BaseButton, ButtonProps as BaseButtonProps } from '@mantine/core'
 import { ButtonHTMLAttributes, FC } from 'react'
+
 import { ButtonProvider, useButtonContext } from '../lib/ButtonContext'
 
 export type ButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLButtonElement>

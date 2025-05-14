@@ -1,7 +1,8 @@
 import { fn } from '@storybook/test'
-
 import { BookmarkSimple } from '@phosphor-icons/react'
+
 import type { Meta, StoryFn, StoryObj } from '@storybook/react'
+
 import { Button, ButtonProps } from './Button'
 
 const meta = {
@@ -18,9 +19,7 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 const Template: StoryFn<ButtonProps> = args => {
-  return (
-      <Button {...args}>{args.children}</Button>
-  )
+  return <Button {...args}>{args.children}</Button>
 }
 
 export const Standart: Story = {
@@ -92,23 +91,23 @@ export const WithIcon: Story = {
 export const Sizes: Story = {
   render: args => {
     return (
-        <div style={{ display: 'flex', gap: 12 }}>
-          <Button size="xs" {...args}>
-            Extra small
-          </Button>
-          <Button size="sm" {...args}>
-            Small
-          </Button>
-          <Button size="md" {...args}>
-            Medium
-          </Button>
-          <Button size="lg" {...args}>
-            Large
-          </Button>
-          <Button size="xl" {...args}>
-            Extra large
-          </Button>
-        </div>
+      <div style={{ display: 'flex', gap: 12 }}>
+        <Button size="xs" {...args}>
+          Extra small
+        </Button>
+        <Button size="sm" {...args}>
+          Small
+        </Button>
+        <Button size="md" {...args}>
+          Medium
+        </Button>
+        <Button size="lg" {...args}>
+          Large
+        </Button>
+        <Button size="xl" {...args}>
+          Extra large
+        </Button>
+      </div>
     )
   },
 }
