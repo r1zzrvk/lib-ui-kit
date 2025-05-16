@@ -1,12 +1,12 @@
-import { MantineThemeOverride, mergeThemeOverrides } from '@mantine/core'
 import { useMemo } from 'react'
 
-import { colors, fonts, primitives } from '@constants'
-
 import '@mantine/core/styles.css'
+import { TTheme } from '@types'
+import { theme } from '@constants'
 
-const theme: MantineThemeOverride = mergeThemeOverrides(colors, fonts, primitives)
-
-export const useTheme = (): MantineThemeOverride => {
+/**
+ * @function Provides theme object and mantine styles to the application
+ * */
+export const useTheme = (): TTheme => {
   return useMemo(() => theme, [])
 }
