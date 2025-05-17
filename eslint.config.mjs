@@ -77,7 +77,6 @@ export default defineConfig([
       'tsconfig.app.json',
       '.storybook/**',
       'coverage/**',
-      // 'EXAMPLE/**',
     ],
     rules: {
       'react/function-component-definition': [

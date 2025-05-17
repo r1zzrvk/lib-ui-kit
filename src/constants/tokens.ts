@@ -1,5 +1,8 @@
 import { createTheme, MantineThemeOverride } from '@mantine/core'
 
+/**
+ * @description Lib theme font tokens
+ * */
 export const fonts: MantineThemeOverride = createTheme({
   scale: 1,
   fontSmoothing: true,
@@ -53,6 +56,9 @@ export const fonts: MantineThemeOverride = createTheme({
   },
 })
 
+/**
+ * @description Lib theme primitives tokens
+ * */
 export const primitives: MantineThemeOverride = createTheme({
   spacing: {
     xs4: '2px',
@@ -75,17 +81,24 @@ export const primitives: MantineThemeOverride = createTheme({
     xl: '1440px',
   },
   radius: {
-    xl: '40px',
-    lg: '32px',
-    md: '24px',
-    sm: '18px',
-    xs: '12px',
+    xs3: '4px',
+    xs2: '8px',
+    xs: '10px',
+    sm: '12px',
+    md: '16px',
+    lg: '18px',
+    xl: '24px',
+    xl2: '32px',
+    xl3: '40px',
     round: '1000px',
   },
   cursorType: 'default',
   defaultRadius: 'sm',
 })
 
+/**
+ * @description Lib theme colors tokens
+ * */
 export const colors: MantineThemeOverride = createTheme({
   autoContrast: false,
   colors: {
