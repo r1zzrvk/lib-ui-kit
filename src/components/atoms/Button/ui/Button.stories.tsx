@@ -16,6 +16,7 @@ const meta = {
 } satisfies Meta<typeof Button>
 
 export default meta
+
 type Story = StoryObj<typeof meta>
 
 const Template: StoryFn<TButtonProps> = args => {
@@ -55,6 +56,15 @@ export const Transparent: Story = {
     children: 'Transparent',
     size: 'md',
     variant: 'transparent',
+  },
+}
+
+export const Gradient: Story = {
+  render: Template,
+  args: {
+    children: 'Gradient',
+    size: 'md',
+    variant: 'gradient',
   },
 }
 
