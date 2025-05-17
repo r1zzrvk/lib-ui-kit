@@ -3,22 +3,23 @@ import { BookmarkSimple } from '@phosphor-icons/react'
 
 import type { Meta, StoryFn, StoryObj } from '@storybook/react'
 
-import { Button, ButtonProps } from './Button'
+import { Button } from './Button'
+import { TButtonProps } from '../lib'
 
 const meta = {
   title: 'Atoms/Buttons/Button',
   component: Button,
   tags: ['autodocs'],
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: {
     onClick: fn(),
   },
 } satisfies Meta<typeof Button>
 
 export default meta
+
 type Story = StoryObj<typeof meta>
 
-const Template: StoryFn<ButtonProps> = args => {
+const Template: StoryFn<TButtonProps> = args => {
   return <Button {...args}>{args.children}</Button>
 }
 
@@ -58,6 +59,15 @@ export const Transparent: Story = {
   },
 }
 
+export const Gradient: Story = {
+  render: Template,
+  args: {
+    children: 'Gradient',
+    size: 'md',
+    variant: 'gradient',
+  },
+}
+
 export const Disabled: Story = {
   render: Template,
   args: {
@@ -84,6 +94,7 @@ export const WithIcon: Story = {
     children: 'With Icon',
     size: 'md',
     variant: 'filled',
+    // TODO: replace this with Icon component
     rightSection: <BookmarkSimple size={16} weight="regular" />,
   },
 }

@@ -1,17 +1,16 @@
-import { Button as BaseButton, ButtonProps as BaseButtonProps } from '@mantine/core'
-import { ButtonHTMLAttributes, FC } from 'react'
+import { Button as BaseButton } from '@mantine/core'
+import { FC } from 'react'
 
-import { ButtonProvider, useButtonContext } from '../lib/ButtonContext'
+import { TButtonProps, ContextProvider, useButtonContext } from '../lib'
 
-export type ButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLButtonElement>
 /** Primary button component for user interaction */
 
-export const Button: FC<ButtonProps> = ({ children, ...props }) => {
+export const Button: FC<TButtonProps> = ({ children, ...props }) => {
   const data = useButtonContext(props)
 
   return (
-    <ButtonProvider value={props}>
+    <ContextProvider value={props}>
       <BaseButton {...data}>{children}</BaseButton>
-    </ButtonProvider>
+    </ContextProvider>
   )
 }
