@@ -1,7 +1,7 @@
 {
   "name": "lib-ui-kit",
   "description": "A UI kit for React applications, built with Mantine and Storybook.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": {
     "name": "r1zzrvk"
   },
@@ -47,7 +47,7 @@
     "README.md",
     "LICENSE"
   ],
-   "homepage": "https://github.com/r1zzrvk/lib-ui-kit#readme",
+  "homepage": "https://github.com/r1zzrvk/lib-ui-kit#readme",
   "private": false,
   "main": "src/index.ts",
   "dependencies": {
