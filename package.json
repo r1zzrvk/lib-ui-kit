@@ -1,7 +1,7 @@
 {
   "name": "lib-ui-kit",
   "description": "A UI kit for React applications, built with Mantine and Storybook.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": {
     "name": "r1zzrvk"
   },
