@@ -1,5 +1,5 @@
 {
-  "name": "@lib/ui-kit",
+  "name": "lib-ui-kit",
   "description": "A UI kit for React applications, built with Mantine and Storybook.",
   "version": "0.0.1",
   "author": {
@@ -9,7 +9,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/r1zzrvk/lib-ui-kit"
+    "url": "git+https://github.com/r1zzrvk/lib-ui-kit.git"
   },
   "scripts": {
     "dev": "vite",
@@ -22,13 +22,21 @@
     "type-check": "tsc",
     "coverage": "vitest run --coverage",
     "full-test": "vitest run --coverage && eslint . --fix && tsc",
-    "chromatic": "chmod +x run-chromatic.sh && bash ./run-chromatic.sh"
+    "chromatic": "chmod +x run-chromatic.sh && bash ./scripts/run-chromatic.sh",
+    "bump:patch": "bash ./scripts/bump-version.sh patch",
+    "bump:minor": "bash ./scripts/bump-version.sh minor",
+    "bump:major": "bash ./scripts/bump-version.sh major",
+    "bump": "bash ./scripts/bump-version.sh"
   },
   "keywords": [
     "react",
     "ui-kit",
     "storybook",
-    "mantine"
+    "mantine",
+    "vite",
+    "typescript",
+    "package",
+    "library"
   ],
   "files": [
     "dist",
@@ -38,6 +46,7 @@
   ],
   "homepage": "",
   "private": false,
+  "main": "src/index.ts",
   "dependencies": {
     "@mantine/core": "^7.17.3",
     "@mantine/hooks": "^7.17.3",
