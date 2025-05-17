@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/r1zzrvk/lib-ui-kit.git"
   },
+  "bugs": {
+    "url": "https://github.com/r1zzrvk/lib-ui-kit/issues"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -44,7 +47,7 @@
     "README.md",
     "LICENSE"
   ],
-  "homepage": "",
+   "homepage": "https://github.com/r1zzrvk/lib-ui-kit#readme",
   "private": false,
   "main": "src/index.ts",
   "dependencies": {

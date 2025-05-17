@@ -3,6 +3,14 @@ npm run build
 
 npm publish --access public
 
+Bump version:
+bump:major
+bump:minor
+bump:patch
+
+Push tags:
+git push --follow-tags
+
 Chromatic docs:
 https://www.chromatic.com/docs/
 
