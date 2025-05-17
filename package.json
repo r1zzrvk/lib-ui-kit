@@ -29,7 +29,8 @@
     "bump:patch": "bash ./scripts/bump-version.sh patch",
     "bump:minor": "bash ./scripts/bump-version.sh minor",
     "bump:major": "bash ./scripts/bump-version.sh major",
-    "bump": "bash ./scripts/bump-version.sh"
+    "bump": "bash ./scripts/bump-version.sh",
+    "push-tags": "git push --follow-tags"
   },
   "keywords": [
     "react",
