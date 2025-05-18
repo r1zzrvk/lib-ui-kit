@@ -1,7 +1,10 @@
 Publish to npm:
 npm run build
-
 npm publish --access public
+
+
+Release:
+Commit all changes -> npm run bump -> npm run push-tags
 
 Bump version:
 bump:major
@@ -17,6 +20,13 @@ https://www.chromatic.com/docs/
 Storybook:
 https://682846b61794ea4c939957e9-jqhrivahke.chromatic.com/?path=/docs/atoms-buttons-button--docs
 
+
+NPM:
+
+https://www.npmjs.com/package/lib-ui-kit
+
+Generate changelog:
+npm run changelog
 
 Structure of each component from `/components`
 
