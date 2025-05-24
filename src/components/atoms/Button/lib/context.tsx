@@ -1,30 +1,31 @@
-import { createContext, ReactNode, useContext, useMemo } from 'react'
+import { createContext, useContext, useMemo } from 'react'
 
-import { TButtonProps } from '../lib'
+import { TContextValue, TProviderProps, TButtonProps } from '../lib'
 import { getButtonTokens } from './utils'
 
-export const ButtonContext = createContext<TButtonProps>({})
+const ButtonContext = createContext<TContextValue>({})
 
-export function useButtonContext(value?: TButtonProps): TButtonProps {
-  const context = useContext(ButtonContext)
-  const data = value || context
+export function useButtonContext(): TContextValue {
+  return useContext(ButtonContext)
+}
 
-  getButtonTokens(data.size)
-
-  return useMemo(() => {
-    return {
-      ...data,
-      ...getButtonTokens(data.size),
-      fw: data.fw || 500,
+export const ContextProvider = ({ children, value }: TProviderProps) => {
+  const contextValue = useMemo<TContextValue>(() => {
+    const base: TButtonProps = {
+      size: 'md',
+      variant: 'filled',
+      fw: 500,
+      ...value,
     }
-  }, [data])
-}
 
-export type TButtonContext = {
-  children: ReactNode
-  value: TButtonProps
-}
+    const tokens = getButtonTokens(base.size!)
 
-export const ContextProvider = ({ children, value }: TButtonContext) => {
-  return <ButtonContext.Provider value={value}>{children}</ButtonContext.Provider>
+    return {
+      ...base,
+      ...tokens,
+      fw: base.fw!,
+    }
+  }, [value])
+
+  return <ButtonContext.Provider value={contextValue}>{children}</ButtonContext.Provider>
 }

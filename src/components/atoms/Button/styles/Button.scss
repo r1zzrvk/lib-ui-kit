@@ -1,0 +1,37 @@
+.button-section {
+      &--xs {
+            margin-right: 4px;
+            margin-left: 4px;
+      }
+
+      &--sm,
+      &--md {
+            &[data-position='left'] {
+                  margin-right: 4px;
+            }
+
+            &[data-position='right'] {
+                  margin-left: 4px;
+            }
+      }
+
+      &--lg {
+            &[data-position='left'] {
+                  margin-right: 6px;
+            }
+
+            &[data-position='right'] {
+                  margin-left: 6px;
+            }
+      }
+
+      &--xl {
+            &[data-position='left'] {
+                  margin-right: 8px;
+            }
+
+            &[data-position='right'] {
+                  margin-left: 8px;
+            }
+      }
+}

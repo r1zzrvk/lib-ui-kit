@@ -98,6 +98,7 @@ export const primitives: MantineThemeOverride = createTheme({
 
 /**
  * @description Lib theme colors tokens
+ * @see https://mantine.dev/theming/colors/#default-colors
  * */
 export const colors: MantineThemeOverride = createTheme({
   autoContrast: false,

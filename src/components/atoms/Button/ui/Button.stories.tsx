@@ -1,10 +1,11 @@
 import { fn } from '@storybook/test'
-import { BookmarkSimple } from '@phosphor-icons/react'
 
 import type { Meta, StoryFn, StoryObj } from '@storybook/react'
 
-import { Button } from './Button'
+import { Icon } from '@components/atoms'
+
 import { TButtonProps } from '../lib'
+import { Button } from './Button'
 
 const meta = {
   title: 'Atoms/Buttons/Button',
@@ -23,20 +24,11 @@ const Template: StoryFn<TButtonProps> = args => {
   return <Button {...args}>{args.children}</Button>
 }
 
-export const Standart: Story = {
-  render: Template,
-  args: {
-    children: 'Standard',
-    size: 'lg',
-    variant: 'filled',
-  },
-}
-
 export const Primary: Story = {
   render: Template,
   args: {
     children: 'Primary',
-    size: 'md',
+    size: 'lg',
     variant: 'filled',
   },
 }
@@ -54,8 +46,8 @@ export const Transparent: Story = {
   render: Template,
   args: {
     children: 'Transparent',
-    size: 'md',
-    variant: 'transparent',
+    size: 'lg',
+    variant: 'subtle',
   },
 }
 
@@ -63,7 +55,7 @@ export const Gradient: Story = {
   render: Template,
   args: {
     children: 'Gradient',
-    size: 'md',
+    size: 'lg',
     variant: 'gradient',
   },
 }
@@ -72,7 +64,7 @@ export const Disabled: Story = {
   render: Template,
   args: {
     children: 'Disabled',
-    size: 'md',
+    size: 'lg',
     variant: 'filled',
     disabled: true,
   },
@@ -82,7 +74,7 @@ export const Loading: Story = {
   render: Template,
   args: {
     children: 'Loading',
-    size: 'md',
+    size: 'lg',
     variant: 'filled',
     loading: true,
   },
@@ -92,30 +84,29 @@ export const WithIcon: Story = {
   render: Template,
   args: {
     children: 'With Icon',
-    size: 'md',
+    size: 'lg',
     variant: 'filled',
-    // TODO: replace this with Icon component
-    rightSection: <BookmarkSimple size={16} weight="regular" />,
+    rightSection: <Icon icon="bookmark" size="lg" weight="regular" />,
   },
 }
 
 export const Sizes: Story = {
   render: args => {
     return (
-      <div style={{ display: 'flex', gap: 12 }}>
-        <Button size="xs" {...args}>
+      <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+        <Button size="xs" rightSection={<Icon icon="bookmark" size="xs" weight="regular" />} {...args}>
           Extra small
         </Button>
-        <Button size="sm" {...args}>
+        <Button size="sm" rightSection={<Icon icon="bookmark" size="sm" weight="regular" />} {...args}>
           Small
         </Button>
-        <Button size="md" {...args}>
+        <Button size="md" rightSection={<Icon icon="bookmark" size="md" weight="regular" />} {...args}>
           Medium
         </Button>
-        <Button size="lg" {...args}>
+        <Button size="lg" rightSection={<Icon icon="bookmark" size="lg" weight="regular" />} {...args}>
           Large
         </Button>
-        <Button size="xl" {...args}>
+        <Button size="xl" rightSection={<Icon icon="bookmark" size="xl" weight="regular" />} {...args}>
           Extra large
         </Button>
       </div>

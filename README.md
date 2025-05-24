@@ -34,8 +34,9 @@ Structure of each component from `/components`
 src/components ↓ 
     /[ComponentName] ↓
       /ui ↓ // Holds all UI files related to the parent component 
-        [ComponentName].tsx
+        [ComponentName].tsx // Component for export
         [ComponentName].stories.tsx
+        ui.tsx // Imported component from Mantine
         index.ts
       /lib ↓ // Contains utility files
         constants.ts
@@ -44,13 +45,23 @@ src/components ↓
         utils.ts
         index.ts
       /styles ↓
-        [ComponentName].sass
+        [ComponentName].scss
+        index.scss // For export classes
       /tests ↓
         [ComponentName].test.tsx
       /components ↓ // Each child should be wrapped in a separate folder 
         /[ChildName] ↓
           [ChildName].tsx
           index.ts
-      index.ts
+      index.ts // Only for export external modules
         
 ```
+
+Add how to add icons: 
+
+https://phosphoricons.com
+
+
+
+
+https://mantine.dev/theming/colors/
