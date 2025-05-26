@@ -8,6 +8,10 @@ export type TIconSize = IconProps['size'] | IconSizes
 export type TIconProps = Omit<IconProps, 'color' | 'size'> & {
   icon: TIcon
   color?: IconProps['color']
+  /**
+   * Size of the icon. Can be a number/string or one of the predefined sizes.
+   * xs = 12, sm = 16, md = 20, lg = 24, xl = 32
+   */
   size?: TIconSize
 }
 
@@ -21,6 +25,11 @@ export type TProviderProps = {
 }
 
 export type IconSizes = ESizes.XS | ESizes.SM | ESizes.MD | ESizes.LG | ESizes.XL
+
+/**
+ * TIcon type representing all available icons in the Phosphor icon set.
+ * @see https://phosphoricons.com
+ */
 
 export type TIcon =
   | 'bookmark'

@@ -20,6 +20,11 @@ import { IconSelector } from '../components'
 
 //   themeColor?.[0]
 
+/**
+ * Icon component for displaying various icons from Phosphor Icons library
+ * @see https://phosphoricons.com
+ */
+
 export const Icon: FC<TIconProps> = props => {
   return (
     <ContextProvider value={props}>
