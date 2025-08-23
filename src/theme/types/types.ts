@@ -1,7 +1,7 @@
 import { MantineThemeOverride } from '@mantine/core'
 
 type Intent = 'info' | 'success' | 'warning' | 'danger'
-type Variant = 'solid' | 'soft' | 'hover' | 'contrast' | 'border'
+type Variant = 'solid' | 'soft' | 'hover' | 'contrast' | 'border' | 'softHover'
 type TokenValue = string
 
 /**
@@ -11,7 +11,7 @@ export type TokenKey =
   | `text.${'primary' | 'secondary' | 'muted' | 'inverted' | Intent}`
   | `bg.${'base' | 'raised' | 'soft' | Intent}`
   | `border.${'subtle' | 'strong' | Intent}`
-  | `primary.${'solid' | 'soft' | 'hover' | 'contrast' | 'border'}`
+  | `primary.${'solid' | 'soft' | 'hover' | 'contrast' | 'border' | 'softHover'}`
   | `${Intent}.${Variant}`
 
 export type SemanticTokens = {
