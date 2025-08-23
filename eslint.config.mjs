@@ -66,6 +66,7 @@ export default defineConfig([
     },
     ignores: [
       'build/',
+      'dist/**',
       'node_modules/',
       '.prettierrc.json',
       'tsconfig.tsbuildinfo',

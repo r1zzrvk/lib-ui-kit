@@ -1,6 +1,6 @@
 import { createContext, useContext, useMemo } from 'react'
 
-import { TContextValue, TProviderProps, TButtonProps } from '../lib'
+import { TButtonProps, TContextValue, TProviderProps } from '../lib'
 import { getButtonTokens } from './utils'
 
 const ButtonContext = createContext<TContextValue>({})
@@ -18,11 +18,11 @@ export const ContextProvider = ({ children, value }: TProviderProps) => {
       ...value,
     }
 
-    const tokens = getButtonTokens(base.size!)
+    const tokens = getButtonTokens(base.size!) || {}
 
     return {
-      ...base,
       ...tokens,
+      ...base,
       fw: base.fw!,
     }
   }, [value])

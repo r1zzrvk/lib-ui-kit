@@ -21,7 +21,7 @@
     "test": "vitest",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "lint": "eslint . --fix",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
     "type-check": "tsc",
     "coverage": "vitest run --coverage",
     "full-test": "vitest run --coverage && eslint . --fix && tsc",

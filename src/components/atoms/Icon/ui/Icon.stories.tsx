@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react'
 
 import type { Meta, StoryFn, StoryObj } from '@storybook/react'
 
-import { theme } from '@constants'
+import { theme } from '@theme'
 
 import { ICON_LIST, TIcon, TIconProps } from '../lib'
 import { Icon } from './Icon'

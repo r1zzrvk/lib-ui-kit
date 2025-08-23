@@ -1,37 +1,171 @@
+@use '../../../../theme/styles/tokens.scss' as *;
+@use '../../../../styles/button-mixins.scss' as *;
+
+.button-root {
+  @include button-filled(primary);
+
+  text-decoration: none;
+}
+
+/* INFO */
+.mantine-Button-root.button-root--info[data-variant='filled'] {
+  @include button-filled(info);
+}
+
+.mantine-Button-root.button-root--info[data-variant='light'] {
+  @include button-light(info);
+}
+
+.mantine-Button-root.button-root--info[data-variant='outline'] {
+  @include button-outline(info);
+}
+
+.mantine-Button-root.button-root--info[data-variant='subtle'] {
+  @include button-subtle(info);
+}
+
+.mantine-Button-root.button-root--info[data-variant='transparent'] {
+  @include button-transparent(info);
+}
+
+.mantine-Button-root.button-root--info[data-disabled] {
+  @include button-disabled();
+}
+
+/* SUCCESS */
+.mantine-Button-root.button-root--success[data-variant='filled'] {
+  @include button-filled(success);
+}
+
+.mantine-Button-root.button-root--success[data-variant='light'] {
+  @include button-light(success);
+}
+
+.mantine-Button-root.button-root--success[data-variant='outline'] {
+  @include button-outline(success);
+}
+
+.mantine-Button-root.button-root--success[data-variant='subtle'] {
+  @include button-subtle(success);
+}
+
+.mantine-Button-root.button-root--success[data-variant='transparent'] {
+  @include button-transparent(success);
+}
+
+.mantine-Button-root.button-root--success[data-disabled] {
+  @include button-disabled();
+}
+
+/* WARNING */
+.mantine-Button-root.button-root--warning[data-variant='filled'] {
+  @include button-filled(warning);
+}
+
+.mantine-Button-root.button-root--warning[data-variant='light'] {
+  @include button-light(warning);
+}
+
+.mantine-Button-root.button-root--warning[data-variant='outline'] {
+  @include button-outline(warning);
+}
+
+.mantine-Button-root.button-root--warning[data-variant='subtle'] {
+  @include button-subtle(warning);
+}
+
+.mantine-Button-root.button-root--warning[data-variant='transparent'] {
+  @include button-transparent(warning);
+}
+
+.mantine-Button-root.button-root--warning[data-disabled] {
+  @include button-disabled();
+}
+
+/* DANGER */
+.mantine-Button-root.button-root--danger[data-variant='filled'] {
+  @include button-filled(danger);
+}
+
+.mantine-Button-root.button-root--danger[data-variant='light'] {
+  @include button-light(danger);
+}
+
+.mantine-Button-root.button-root--danger[data-variant='outline'] {
+  @include button-outline(danger);
+}
+
+.mantine-Button-root.button-root--danger[data-variant='subtle'] {
+  @include button-subtle(danger);
+}
+
+.mantine-Button-root.button-root--danger[data-variant='transparent'] {
+  @include button-transparent(danger);
+}
+
+.mantine-Button-root.button-root--danger[data-disabled] {
+  @include button-disabled();
+}
+
+/* PRIMARY */
+.mantine-Button-root.button-root--primary[data-variant='filled'] {
+  @include button-filled(primary);
+}
+
+.mantine-Button-root.button-root--primary[data-variant='light'] {
+  @include button-light(primary);
+}
+
+.mantine-Button-root.button-root--primary[data-variant='outline'] {
+  @include button-outline(primary);
+}
+
+.mantine-Button-root.button-root--primary[data-variant='subtle'] {
+  @include button-subtle(primary);
+}
+
+.mantine-Button-root.button-root--primary[data-variant='transparent'] {
+  @include button-transparent(primary);
+}
+
+.mantine-Button-root.button-root--primary[data-disabled] {
+  @include button-disabled();
+}
+
 .button-section {
-      &--xs {
-            margin-right: 4px;
-            margin-left: 4px;
-      }
+  &--xs {
+    margin-right: 4px;
+    margin-left: 4px;
+  }
 
-      &--sm,
-      &--md {
-            &[data-position='left'] {
-                  margin-right: 4px;
-            }
+  &--sm,
+  &--md {
+    &[data-position='left'] {
+      margin-right: 4px;
+    }
 
-            &[data-position='right'] {
-                  margin-left: 4px;
-            }
-      }
+    &[data-position='right'] {
+      margin-left: 4px;
+    }
+  }
 
-      &--lg {
-            &[data-position='left'] {
-                  margin-right: 6px;
-            }
+  &--lg {
+    &[data-position='left'] {
+      margin-right: 6px;
+    }
 
-            &[data-position='right'] {
-                  margin-left: 6px;
-            }
-      }
+    &[data-position='right'] {
+      margin-left: 6px;
+    }
+  }
 
-      &--xl {
-            &[data-position='left'] {
-                  margin-right: 8px;
-            }
+  &--xl {
+    &[data-position='left'] {
+      margin-right: 8px;
+    }
 
-            &[data-position='right'] {
-                  margin-left: 8px;
-            }
-      }
+    &[data-position='right'] {
+      margin-left: 8px;
+    }
+  }
 }

@@ -1,0 +1,1 @@
+export { getColorToken } from './getColorToken'

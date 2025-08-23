@@ -1,0 +1,54 @@
+
+@use '../theme/styles/tokens.scss' as *;
+
+@mixin button-base() {
+  transition: background-color .3s ease, border-color .3s ease, color .15s ease;
+}
+
+@mixin button-filled($intent) {
+  @include button-base();
+  background-color: token('#{$intent}-solid');
+  color: token('#{$intent}-contrast');
+  border-color: token('#{$intent}-border');
+  &:hover { background-color: token('#{$intent}-hover'); }
+}
+
+@mixin button-light($intent) {
+  @include button-base();
+  background-color: token('#{$intent}-soft');
+  color: token('#{$intent}-solid');
+  border-color: token('#{$intent}-soft');
+  &:hover { background-color: token('#{$intent}-soft'); filter: brightness(.95); }
+}
+
+@mixin button-outline($intent) {
+  @include button-base();
+  background-color: transparent;
+  color: token('#{$intent}-solid');
+  border: 1px solid token('#{$intent}-border');
+  &:hover { background-color: token('#{$intent}-soft'); }
+}
+
+@mixin button-subtle($intent) {
+  @include button-base();
+  border: none;
+  background-color: transparent;
+  color: token('#{$intent}-solid');
+  &:hover { background-color: token('#{$intent}-soft'); }
+}
+
+@mixin button-transparent($intent) {
+  @include button-base();
+  border: none;
+  background-color: transparent;
+  color: token('#{$intent}-solid');
+  &:hover { background-color: transparent; }
+}
+
+@mixin button-disabled() {
+  @include button-base();
+  opacity: .6;
+  filter: saturate(.7);
+  pointer-events: none;
+  border: none;
+}
