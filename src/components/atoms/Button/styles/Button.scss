@@ -128,7 +128,7 @@
   @include button-transparent(primary);
 }
 
-.mantine-Button-root.button-root--primary[data-disabled] {
+.mantine-Button-root.button-root--muted[data-disabled] {
   @include button-disabled();
 }
 

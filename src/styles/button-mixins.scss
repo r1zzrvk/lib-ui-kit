@@ -18,7 +18,10 @@
   background-color: token('#{$intent}-soft');
   color: token('#{$intent}-solid');
   border-color: token('#{$intent}-soft');
-  &:hover { background-color: token('#{$intent}-soft'); filter: brightness(.95); }
+  &:hover { 
+    background-color: token('#{$intent}-softHover'); 
+    border-color: token('#{$intent}-softHover');
+  }
 }
 
 @mixin button-outline($intent) {
@@ -49,6 +52,10 @@
   @include button-base();
   opacity: .6;
   filter: saturate(.7);
-  pointer-events: none;
+  cursor: not-allowed;
   border: none;
+  background-color: token('bg-soft');
+  color: token('text-muted');
+
+  &:hover { background-color: token('bg-soft'); }
 }

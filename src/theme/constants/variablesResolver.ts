@@ -63,6 +63,7 @@ export const cssVariablesResolver: CSSVariablesResolver = theme => ({
     // PRIMARY
     '--primary-solid': getSemanticToken(theme, 'light', 'primary.solid'),
     '--primary-soft': getSemanticToken(theme, 'light', 'primary.soft'),
+    '--primary-softHover': getSemanticToken(theme, 'light', 'primary.softHover'),
     '--primary-hover': getSemanticToken(theme, 'light', 'primary.hover'),
     '--primary-contrast': getSemanticToken(theme, 'light', 'primary.contrast'),
     '--primary-border': getSemanticToken(theme, 'light', 'primary.border'),
@@ -70,6 +71,7 @@ export const cssVariablesResolver: CSSVariablesResolver = theme => ({
     // INFO
     '--info-solid': getSemanticToken(theme, 'light', 'info.solid'),
     '--info-soft': getSemanticToken(theme, 'light', 'info.soft'),
+    '--info-softHover': getSemanticToken(theme, 'light', 'info.softHover'),
     '--info-hover': getSemanticToken(theme, 'light', 'info.hover'),
     '--info-contrast': getSemanticToken(theme, 'light', 'info.contrast'),
     '--info-border': getSemanticToken(theme, 'light', 'info.border'),
@@ -77,6 +79,7 @@ export const cssVariablesResolver: CSSVariablesResolver = theme => ({
     // SUCCESS
     '--success-solid': getSemanticToken(theme, 'light', 'success.solid'),
     '--success-soft': getSemanticToken(theme, 'light', 'success.soft'),
+    '--success-softHover': getSemanticToken(theme, 'light', 'success.softHover'),
     '--success-hover': getSemanticToken(theme, 'light', 'success.hover'),
     '--success-contrast': getSemanticToken(theme, 'light', 'success.contrast'),
     '--success-border': getSemanticToken(theme, 'light', 'success.border'),
@@ -84,6 +87,7 @@ export const cssVariablesResolver: CSSVariablesResolver = theme => ({
     // WARNING
     '--warning-solid': getSemanticToken(theme, 'light', 'warning.solid'),
     '--warning-soft': getSemanticToken(theme, 'light', 'warning.soft'),
+    '--warning-softHover': getSemanticToken(theme, 'light', 'warning.softHover'),
     '--warning-hover': getSemanticToken(theme, 'light', 'warning.hover'),
     '--warning-contrast': getSemanticToken(theme, 'light', 'warning.contrast'),
     '--warning-border': getSemanticToken(theme, 'light', 'warning.border'),
@@ -91,6 +95,7 @@ export const cssVariablesResolver: CSSVariablesResolver = theme => ({
     // DANGER
     '--danger-solid': getSemanticToken(theme, 'light', 'danger.solid'),
     '--danger-soft': getSemanticToken(theme, 'light', 'danger.soft'),
+    '--danger-softHover': getSemanticToken(theme, 'light', 'danger.softHover'),
     '--danger-hover': getSemanticToken(theme, 'light', 'danger.hover'),
     '--danger-contrast': getSemanticToken(theme, 'light', 'danger.contrast'),
     '--danger-border': getSemanticToken(theme, 'light', 'danger.border'),
@@ -128,6 +133,7 @@ export const cssVariablesResolver: CSSVariablesResolver = theme => ({
     // PRIMARY
     '--primary-solid': getSemanticToken(theme, 'dark', 'primary.solid'),
     '--primary-soft': getSemanticToken(theme, 'dark', 'primary.soft'),
+    '--primary-softHover': getSemanticToken(theme, 'dark', 'primary.softHover'),
     '--primary-hover': getSemanticToken(theme, 'dark', 'primary.hover'),
     '--primary-contrast': getSemanticToken(theme, 'dark', 'primary.contrast'),
     '--primary-border': getSemanticToken(theme, 'dark', 'primary.border'),
@@ -135,6 +141,7 @@ export const cssVariablesResolver: CSSVariablesResolver = theme => ({
     // INFO
     '--info-solid': getSemanticToken(theme, 'dark', 'info.solid'),
     '--info-soft': getSemanticToken(theme, 'dark', 'info.soft'),
+    '--info-softHover': getSemanticToken(theme, 'dark', 'info.softHover'),
     '--info-hover': getSemanticToken(theme, 'dark', 'info.hover'),
     '--info-contrast': getSemanticToken(theme, 'dark', 'info.contrast'),
     '--info-border': getSemanticToken(theme, 'dark', 'info.border'),
@@ -142,6 +149,7 @@ export const cssVariablesResolver: CSSVariablesResolver = theme => ({
     // SUCCESS
     '--success-solid': getSemanticToken(theme, 'dark', 'success.solid'),
     '--success-soft': getSemanticToken(theme, 'dark', 'success.soft'),
+    '--success-softHover': getSemanticToken(theme, 'dark', 'success.softHover'),
     '--success-hover': getSemanticToken(theme, 'dark', 'success.hover'),
     '--success-contrast': getSemanticToken(theme, 'dark', 'success.contrast'),
     '--success-border': getSemanticToken(theme, 'dark', 'success.border'),
@@ -149,6 +157,7 @@ export const cssVariablesResolver: CSSVariablesResolver = theme => ({
     // WARNING
     '--warning-solid': getSemanticToken(theme, 'dark', 'warning.solid'),
     '--warning-soft': getSemanticToken(theme, 'dark', 'warning.soft'),
+    '--warning-softHover': getSemanticToken(theme, 'dark', 'warning.softHover'),
     '--warning-hover': getSemanticToken(theme, 'dark', 'warning.hover'),
     '--warning-contrast': getSemanticToken(theme, 'dark', 'warning.contrast'),
     '--warning-border': getSemanticToken(theme, 'dark', 'warning.border'),
@@ -156,6 +165,7 @@ export const cssVariablesResolver: CSSVariablesResolver = theme => ({
     // DANGER
     '--danger-solid': getSemanticToken(theme, 'dark', 'danger.solid'),
     '--danger-soft': getSemanticToken(theme, 'dark', 'danger.soft'),
+    '--danger-softHover': getSemanticToken(theme, 'dark', 'danger.softHover'),
     '--danger-hover': getSemanticToken(theme, 'dark', 'danger.hover'),
     '--danger-contrast': getSemanticToken(theme, 'dark', 'danger.contrast'),
     '--danger-border': getSemanticToken(theme, 'dark', 'danger.border'),

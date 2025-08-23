@@ -67,6 +67,7 @@ const primary = {
   light: {
     'primary.solid': 'orange.6',
     'primary.soft': 'orange.0',
+    'primary.softHover': 'orange.1',
     'primary.hover': 'orange.7',
     'primary.contrast': 'white',
     'primary.border': 'orange.6',
@@ -74,6 +75,7 @@ const primary = {
   dark: {
     'primary.solid': 'orange.8',
     'primary.soft': 'orange.11',
+    'primary.softHover': 'orange.10',
     'primary.hover': 'orange.7',
     'primary.contrast': 'dark.9',
     'primary.border': 'orange.8',
@@ -84,6 +86,7 @@ const info = {
   light: {
     'info.solid': 'blue.6',
     'info.soft': 'blue.0',
+    'info.softHover': 'blue.1',
     'info.hover': 'blue.7',
     'info.contrast': 'white',
     'info.border': 'blue.6',
@@ -91,6 +94,7 @@ const info = {
   dark: {
     'info.solid': 'blue.8',
     'info.soft': 'blue.11',
+    'info.softHover': 'blue.10',
     'info.hover': 'blue.7',
     'info.contrast': 'dark.9',
     'info.border': 'blue.8',
@@ -101,6 +105,7 @@ const success = {
   light: {
     'success.solid': 'green.6',
     'success.soft': 'green.0',
+    'success.softHover': 'green.1',
     'success.hover': 'green.7',
     'success.contrast': 'white',
     'success.border': 'green.6',
@@ -108,6 +113,7 @@ const success = {
   dark: {
     'success.solid': 'green.8',
     'success.soft': 'green.11',
+    'success.softHover': 'green.10',
     'success.hover': 'green.7',
     'success.contrast': 'dark.9',
     'success.border': 'green.8',
@@ -118,6 +124,7 @@ const warning = {
   light: {
     'warning.solid': 'yellow.6',
     'warning.soft': 'yellow.0',
+    'warning.softHover': 'yellow.1',
     'warning.hover': 'yellow.7',
     'warning.contrast': 'white',
     'warning.border': 'yellow.6',
@@ -125,6 +132,7 @@ const warning = {
   dark: {
     'warning.solid': 'yellow.8',
     'warning.soft': 'yellow.11',
+    'warning.softHover': 'yellow.10',
     'warning.hover': 'yellow.7',
     'warning.contrast': 'dark.9',
     'warning.border': 'yellow.8',
@@ -135,6 +143,7 @@ const danger = {
   light: {
     'danger.solid': 'red.6',
     'danger.soft': 'red.0',
+    'danger.softHover': 'red.1',
     'danger.hover': 'red.7',
     'danger.contrast': 'white',
     'danger.border': 'red.6',
@@ -142,6 +151,7 @@ const danger = {
   dark: {
     'danger.solid': 'red.8',
     'danger.soft': 'red.11',
+    'danger.softHover': 'red.10',
     'danger.hover': 'red.7',
     'danger.contrast': 'dark.9',
     'danger.border': 'red.8',

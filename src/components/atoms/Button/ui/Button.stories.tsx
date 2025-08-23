@@ -54,15 +54,6 @@ export const Subtle: Story = {
   },
 }
 
-export const Gradient: Story = {
-  render: Template,
-  args: {
-    children: 'Gradient',
-    size: 'lg',
-    variant: 'gradient',
-  },
-}
-
 export const Disabled: Story = {
   render: Template,
   args: {
