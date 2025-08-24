@@ -1,12 +1,16 @@
-import { FC } from 'react'
-import { Button } from '@mantine/core'
+import { Button, useMantineColorScheme } from '@mantine/core'
 import clsx from 'clsx'
+import { FC } from 'react'
+
+import { useTheme } from '@hooks'
+import { SemanticTokens, TokenKey } from '@theme'
 
 import { TButtonProps, useButtonContext } from '../lib'
-
 import '../styles/index.scss'
 
 export const MantineButton: FC<TButtonProps> = ({ children }) => {
+  const theme = useTheme()
+  const { colorScheme } = useMantineColorScheme()
   const data = useButtonContext()
 
   const intent =
@@ -14,7 +18,9 @@ export const MantineButton: FC<TButtonProps> = ({ children }) => {
       ? String(data.color)
       : null
 
-  const rootClass = clsx('button-root', intent && `button-root--${intent}`)
+  const withDisabled = data.disabled ? 'muted' : intent
+
+  const rootClass = clsx('button-root', withDisabled && `button-root--${withDisabled}`)
   const sectionClass = clsx('button-section', data.size && `button-section--${data.size}`)
 
   const mergedClassNames: TButtonProps['classNames'] = {
@@ -25,8 +31,20 @@ export const MantineButton: FC<TButtonProps> = ({ children }) => {
 
   const { classNames: _, ...buttonProps } = data
 
+  const loaderColor =
+    data.variant === 'filled'
+      ? theme.other?.tokens?.[colorScheme as keyof SemanticTokens]?.['primary.contrast']
+      : theme.other?.tokens?.[colorScheme as keyof SemanticTokens]?.[`${intent}.solid` as TokenKey]
+
   return (
-    <Button {...buttonProps} classNames={mergedClassNames} data-variant={data.variant}>
+    <Button
+      {...buttonProps}
+      classNames={mergedClassNames}
+      data-variant={data.variant}
+      loaderProps={{
+        color: loaderColor,
+      }}
+    >
       {children}
     </Button>
   )

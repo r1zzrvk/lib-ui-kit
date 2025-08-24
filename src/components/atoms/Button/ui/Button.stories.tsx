@@ -1,4 +1,5 @@
 import { fn } from '@storybook/test'
+import { Flex, Text } from '@mantine/core'
 
 import type { Meta, StoryFn, StoryObj } from '@storybook/react'
 
@@ -14,6 +15,26 @@ const meta = {
   args: {
     onClick: fn(),
   },
+  argTypes: {
+    size: {
+      control: { type: 'select' },
+      options: ['xs', 'sm', 'md', 'lg', 'xl'],
+    },
+    variant: {
+      control: { type: 'select' },
+      options: ['filled', 'light', 'outline', 'subtle', 'transparent'],
+    },
+    color: {
+      control: { type: 'select' },
+      options: ['primary', 'info', 'success', 'warning', 'danger', 'muted'],
+    },
+    disabled: {
+      control: { type: 'boolean' },
+    },
+    loading: {
+      control: { type: 'boolean' },
+    },
+  },
 } satisfies Meta<typeof Button>
 
 export default meta
@@ -24,183 +45,175 @@ const Template: StoryFn<TButtonProps> = args => {
   return <Button {...args}>{args.children}</Button>
 }
 
-export const Primary: Story = {
+export const Default: Story = {
   render: Template,
   args: {
-    children: 'Primary',
-    size: 'lg',
+    children: 'Default',
+    size: 'md',
     variant: 'filled',
     color: 'primary',
   },
 }
 
-export const Light: Story = {
-  render: Template,
+export const Variants: Story = {
+  render: args => (
+    <Flex direction="column" gap="md">
+      <Flex gap="md" align="center">
+        <Text w={100}>Primary</Text>
+        <Button {...args} variant="filled" color="primary">
+          Filled
+        </Button>
+        <Button {...args} variant="light" color="primary">
+          Light
+        </Button>
+        <Button {...args} variant="outline" color="primary">
+          Outline
+        </Button>
+        <Button {...args} variant="subtle" color="primary">
+          Subtle
+        </Button>
+        <Button {...args} variant="transparent" color="primary">
+          Transparent
+        </Button>
+      </Flex>
+      <Flex gap="md" align="center">
+        <Text w={100}>Info</Text>
+        <Button {...args} variant="filled" color="info">
+          Filled
+        </Button>
+        <Button {...args} variant="light" color="info">
+          Light
+        </Button>
+        <Button {...args} variant="outline" color="info">
+          Outline
+        </Button>
+        <Button {...args} variant="subtle" color="info">
+          Subtle
+        </Button>
+        <Button {...args} variant="transparent" color="info">
+          Transparent
+        </Button>
+      </Flex>
+      <Flex gap="md" align="center">
+        <Text w={100}>Success</Text>
+        <Button {...args} variant="filled" color="success">
+          Filled
+        </Button>
+        <Button {...args} variant="light" color="success">
+          Light
+        </Button>
+        <Button {...args} variant="outline" color="success">
+          Outline
+        </Button>
+        <Button {...args} variant="subtle" color="success">
+          Subtle
+        </Button>
+        <Button {...args} variant="transparent" color="success">
+          Transparent
+        </Button>
+      </Flex>
+      <Flex gap="md" align="center">
+        <Text w={100}>Warning</Text>
+        <Button {...args} variant="filled" color="warning">
+          Filled
+        </Button>
+        <Button {...args} variant="light" color="warning">
+          Light
+        </Button>
+        <Button {...args} variant="outline" color="warning">
+          Outline
+        </Button>
+        <Button {...args} variant="subtle" color="warning">
+          Subtle
+        </Button>
+        <Button {...args} variant="transparent" color="warning">
+          Transparent
+        </Button>
+      </Flex>
+      <Flex gap="md" align="center">
+        <Text w={100}>Danger</Text>
+        <Button {...args} variant="filled" color="danger">
+          Filled
+        </Button>
+        <Button {...args} variant="light" color="danger">
+          Light
+        </Button>
+        <Button {...args} variant="outline" color="danger">
+          Outline
+        </Button>
+        <Button {...args} variant="subtle" color="danger">
+          Subtle
+        </Button>
+        <Button {...args} variant="transparent" color="danger">
+          Transparent
+        </Button>
+      </Flex>
+      <Flex gap="md" align="center">
+        <Text w={100}>Disabled</Text>
+        <Button {...args} variant="filled" disabled>
+          Filled
+        </Button>
+        <Button {...args} variant="light" disabled>
+          Light
+        </Button>
+        <Button {...args} variant="outline" disabled>
+          Outline
+        </Button>
+        <Button {...args} variant="subtle" disabled>
+          Subtle
+        </Button>
+        <Button {...args} variant="transparent" disabled>
+          Transparent
+        </Button>
+      </Flex>
+      <Flex gap="md" align="center">
+        <Text w={100}>Loading</Text>
+        <Button {...args} variant="filled" color="primary" loading>
+          Filled
+        </Button>
+        <Button {...args} variant="light" color="primary" loading>
+          Light
+        </Button>
+        <Button {...args} variant="outline" color="primary" loading>
+          Outline
+        </Button>
+        <Button {...args} variant="subtle" color="primary" loading>
+          Subtle
+        </Button>
+        <Button {...args} variant="transparent" color="primary" loading>
+          Transparent
+        </Button>
+      </Flex>
+    </Flex>
+  ),
   args: {
-    children: 'Light',
-    size: 'lg',
-    variant: 'light',
-    color: 'primary',
-  },
-}
-
-export const Subtle: Story = {
-  render: Template,
-  args: {
-    children: 'Subtle',
-    size: 'lg',
-    variant: 'subtle',
-    color: 'primary',
-  },
-}
-
-export const Disabled: Story = {
-  render: Template,
-  args: {
-    children: 'Disabled',
-    size: 'lg',
-    variant: 'filled',
-    color: 'muted',
-    disabled: true,
-  },
-}
-
-export const Loading: Story = {
-  render: Template,
-  args: {
-    children: 'Loading',
-    size: 'lg',
-    variant: 'filled',
-    color: 'primary',
-    loading: true,
-  },
-}
-
-export const WithIcon: Story = {
-  render: Template,
-  args: {
-    children: 'With Icon',
-    size: 'lg',
-    variant: 'filled',
-    color: 'primary',
-    rightSection: <Icon icon="bookmark" size="lg" weight="regular" />,
+    size: 'md',
   },
 }
 
 export const Sizes: Story = {
   render: args => {
     return (
-      <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-        <Button size="xs" rightSection={<Icon icon="bookmark" size="xs" weight="regular" />} {...args}>
+      <Flex gap="md" align="center" wrap="wrap">
+        <Button size="xs" rightSection={<Icon icon="bookmark" size={args.size || 'xs'} weight="regular" />} {...args}>
           Extra small
         </Button>
-        <Button size="sm" rightSection={<Icon icon="bookmark" size="sm" weight="regular" />} {...args}>
+        <Button size="sm" rightSection={<Icon icon="bookmark" size={args.size || 'sm'} weight="regular" />} {...args}>
           Small
         </Button>
-        <Button size="md" rightSection={<Icon icon="bookmark" size="md" weight="regular" />} {...args}>
+        <Button size="md" rightSection={<Icon icon="bookmark" size={args.size || 'md'} weight="regular" />} {...args}>
           Medium
         </Button>
-        <Button size="lg" rightSection={<Icon icon="bookmark" size="lg" weight="regular" />} {...args}>
+        <Button size="lg" rightSection={<Icon icon="bookmark" size={args.size || 'lg'} weight="regular" />} {...args}>
           Large
         </Button>
-        <Button size="xl" rightSection={<Icon icon="bookmark" size="xl" weight="regular" />} {...args}>
+        <Button size="xl" rightSection={<Icon icon="bookmark" size={args.size || 'xl'} weight="regular" />} {...args}>
           Extra large
         </Button>
-      </div>
+      </Flex>
     )
   },
-}
-
-export const Variants: Story = {
-  render: args => {
-    return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-          <Button color="primary" variant="filled" size="lg" {...args}>
-            Filled
-          </Button>
-          <Button color="primary" variant="light" size="lg" {...args}>
-            Light
-          </Button>
-          <Button color="primary" variant="outline" size="lg" {...args}>
-            Outline
-          </Button>
-          <Button color="primary" variant="subtle" size="lg" {...args}>
-            Subtle
-          </Button>
-          <Button color="primary" variant="transparent" size="lg" {...args}>
-            Transparent
-          </Button>
-        </div>
-        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-          <Button color="success" variant="filled" size="lg" {...args}>
-            Filled
-          </Button>
-          <Button color="success" variant="light" size="lg" {...args}>
-            Light
-          </Button>
-          <Button color="success" variant="outline" size="lg" {...args}>
-            Outline
-          </Button>
-          <Button color="success" variant="subtle" size="lg" {...args}>
-            Subtle
-          </Button>
-          <Button color="success" variant="transparent" size="lg" {...args}>
-            Transparent
-          </Button>
-        </div>
-        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-          <Button color="danger" variant="filled" size="lg" {...args}>
-            Filled
-          </Button>
-          <Button color="danger" variant="light" size="lg" {...args}>
-            Light
-          </Button>
-          <Button color="danger" variant="outline" size="lg" {...args}>
-            Outline
-          </Button>
-          <Button color="danger" variant="subtle" size="lg" {...args}>
-            Subtle
-          </Button>
-          <Button color="danger" variant="transparent" size="lg" {...args}>
-            Transparent
-          </Button>
-        </div>
-        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-          <Button color="info" variant="filled" size="lg" {...args}>
-            Filled
-          </Button>
-          <Button color="info" variant="light" size="lg" {...args}>
-            Light
-          </Button>
-          <Button color="info" variant="outline" size="lg" {...args}>
-            Outline
-          </Button>
-          <Button color="info" variant="subtle" size="lg" {...args}>
-            Subtle
-          </Button>
-          <Button color="info" variant="transparent" size="lg" {...args}>
-            Transparent
-          </Button>
-        </div>
-        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-          <Button color="warning" variant="filled" size="lg" {...args}>
-            Filled
-          </Button>
-          <Button color="warning" variant="light" size="lg" {...args}>
-            Light
-          </Button>
-          <Button color="warning" variant="outline" size="lg" {...args}>
-            Outline
-          </Button>
-          <Button color="warning" variant="subtle" size="lg" {...args}>
-            Subtle
-          </Button>
-          <Button color="warning" variant="transparent" size="lg" {...args}>
-            Transparent
-          </Button>
-        </div>
-      </div>
-    )
+  args: {
+    variant: 'filled',
   },
 }

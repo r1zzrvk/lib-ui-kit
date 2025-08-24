@@ -1,3 +1,3 @@
 export { theme } from './theme'
-export type { TTheme, SemanticTokens, ColorVariants } from './types'
+export type { TTheme, SemanticTokens, ColorVariants, TokenKey } from './types'
 export { cssVariablesResolver } from './constants'

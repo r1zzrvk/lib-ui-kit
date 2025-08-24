@@ -3,7 +3,7 @@ import { ReactNode } from 'react'
 
 import { ESizes } from '@types'
 
-export type AvatarSizes = ESizes.XS | ESizes.SM | ESizes.MD | ESizes.LG | ESizes.XL
+export type AvatarSizes = ESizes.XS2 | ESizes.XS | ESizes.SM | ESizes.MD | ESizes.LG | ESizes.XL | ESizes.XL2
 
 export type TAvatarSize = AvatarProps['size'] | AvatarSizes
 

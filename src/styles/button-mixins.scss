@@ -59,3 +59,20 @@
 
   &:hover { background-color: token('bg-soft'); }
 }
+
+@mixin action-icon-default() {
+  @include button-base();
+  background-color: token('bg-soft');
+  color: token('text-solid');
+  border: 1px solid token('border-subtle');
+
+  &:hover { 
+    background-color: token('bg-raised'); 
+    border: 1px solid token('border-strong');
+  }
+
+  &:disabled,
+  &[data-disabled] {
+    @include button-disabled();
+  }
+}
