@@ -1,3 +1,4 @@
+import { Flex } from '@mantine/core'
 import { FC, ReactNode } from 'react'
 
 import type { Meta, StoryFn, StoryObj } from '@storybook/react'
@@ -11,6 +12,20 @@ const meta = {
   title: 'Atoms/Icons/Icon',
   component: Icon,
   tags: ['autodocs'],
+  argTypes: {
+    size: {
+      control: { type: 'select' },
+      options: ['xs', 'sm', 'md', 'lg', 'xl'],
+    },
+    icon: {
+      control: { type: 'select' },
+      options: ['heart', 'star', 'user', 'gear', 'x', 'check', 'plus', 'minus'],
+    },
+    weight: {
+      control: { type: 'select' },
+      options: ['regular', 'bold', 'duotone', 'fill', 'light', 'thin'],
+    },
+  },
 } satisfies Meta<typeof Icon>
 
 export default meta
@@ -46,7 +61,7 @@ export const Variants: Story = {
   },
   render: args => {
     return (
-      <div style={{ display: 'flex', gap: 12 }}>
+      <Flex gap="md">
         <WithLabel label="Regular">
           <Icon {...args} weight="regular" />
         </WithLabel>
@@ -65,7 +80,7 @@ export const Variants: Story = {
         <WithLabel label="Duotone">
           <Icon {...args} weight="duotone" />
         </WithLabel>
-      </div>
+      </Flex>
     )
   },
 }
@@ -78,7 +93,7 @@ export const Sizes: Story = {
   },
   render: args => {
     return (
-      <div style={{ display: 'flex', gap: 12 }}>
+      <Flex gap="md">
         <WithLabel label="Extra Small">
           <Icon {...args} size="xs" />
         </WithLabel>
@@ -97,7 +112,7 @@ export const Sizes: Story = {
         <WithLabel label="Custom Size">
           <Icon {...args} size={50} />
         </WithLabel>
-      </div>
+      </Flex>
     )
   },
 }

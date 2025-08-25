@@ -7,7 +7,7 @@ import { Avatar } from './Avatar'
 import { TAvatarProps } from '../lib'
 
 const meta = {
-  title: 'Atoms/Avatar',
+  title: 'Atoms/Data Display/Avatar',
   component: Avatar,
   tags: ['autodocs'],
   argTypes: {
