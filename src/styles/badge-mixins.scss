@@ -1,0 +1,40 @@
+@use '../theme/styles/tokens.scss' as *;
+
+@mixin badge-base() {
+  transition: background-color .3s ease, border-color .3s ease, color .15s ease;
+}
+
+@mixin badge-filled($intent) {
+  @include badge-base();
+  background-color: token('#{$intent}-solid');
+  color: token('#{$intent}-contrast');
+  border-color: token('#{$intent}-border');
+}
+
+@mixin badge-light($intent) {
+  @include badge-base();
+  background-color: token('#{$intent}-soft');
+  color: token('#{$intent}-solid');
+  border-color: token('#{$intent}-soft');
+}
+
+@mixin badge-outline($intent) {
+  @include badge-base();
+  background-color: transparent;
+  color: token('#{$intent}-solid');
+  border: 1px solid token('#{$intent}-border');
+}
+
+@mixin badge-subtle($intent) {
+  @include badge-base();
+  background-color: transparent;
+  color: token('#{$intent}-solid');
+  border: none;
+}
+
+@mixin badge-transparent($intent) {
+  @include badge-base();
+  background-color: transparent;
+  color: token('#{$intent}-solid');
+  border: none;
+}
