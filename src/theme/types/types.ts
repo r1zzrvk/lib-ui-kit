@@ -1,5 +1,24 @@
 import { MantineThemeOverride } from '@mantine/core'
 
+type Intent = 'info' | 'success' | 'warning' | 'danger'
+type Variant = 'solid' | 'soft' | 'hover' | 'contrast' | 'border' | 'softHover'
+type TokenValue = string
+
+/**
+ * @description Token keys for semantic tokens
+ */
+export type TokenKey =
+  | `text.${'primary' | 'secondary' | 'muted' | 'inverted' | Intent}`
+  | `bg.${'base' | 'raised' | 'soft' | Intent}`
+  | `border.${'subtle' | 'strong' | Intent}`
+  | `primary.${'solid' | 'soft' | 'hover' | 'contrast' | 'border' | 'softHover'}`
+  | `${Intent}.${Variant}`
+
+export type SemanticTokens = {
+  light: Record<TokenKey, TokenValue>
+  dark: Record<TokenKey, TokenValue>
+}
+
 /**
  * @description Mantine theme type extended with Lib theme tokens
  * @extends MantineThemeOverride
@@ -58,4 +77,17 @@ export type TTheme = Omit<
    * h1 = 40/44/700, h2 = 32/36/500, h3 = 24/28/500, h4 = 20/24/500
    */
   headings?: MantineThemeOverride['headings']
+  other?: {
+    tokens?: SemanticTokens
+  }
+}
+
+/**
+ * @description Color variants for components
+ *  */
+export type ColorVariants = {
+  text: Intent | 'primary' | 'secondary' | 'muted' | 'inverted'
+  interaction: Intent | 'primary' | 'secondary' | 'muted' | 'inverted'
+  bg: 'base' | 'raised' | 'soft' | Variant
+  border: 'subtle' | 'strong'
 }

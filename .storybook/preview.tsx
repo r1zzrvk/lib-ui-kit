@@ -1,5 +1,3 @@
-// Import styles of packages that you've installed.
-// All packages except `@mantine/hooks` require styles imports
 import '@mantine/core/styles.css';
 
 import React, { useEffect } from 'react';
@@ -10,7 +8,7 @@ import {
   useMantineColorScheme,
 } from '@mantine/core';
 import { useTheme } from '../src/hooks/useTheme';
-// theme.ts file from previous step
+import { cssVariablesResolver } from '../src/theme/constants/variablesResolver';
 
 const channel = addons.getChannel();
 
@@ -38,7 +36,7 @@ const WithTheme = ({
 }) => {
   const theme = useTheme();
   return (
-    <MantineProvider theme={theme}>
+    <MantineProvider theme={theme} cssVariablesResolver={cssVariablesResolver}>
       {children}
     </MantineProvider>
   );

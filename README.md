@@ -39,4 +39,3 @@ Please check the [Development guide](https://github.com/r1zzrvk/lib-ui-kit/wiki/
 ## 📜 License
 
 MIT — [LICENSE](./LICENSE)
-
