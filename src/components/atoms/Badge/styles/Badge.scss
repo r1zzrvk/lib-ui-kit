@@ -1,0 +1,111 @@
+@use '../../../../theme/styles/tokens.scss' as *;
+@use '../../../../styles/badge-mixins.scss' as *;
+
+.badge-root {
+  @include badge-filled(primary);
+}
+
+/* INFO */
+.mantine-Badge-root.badge-root--info[data-variant='filled'] {
+  @include badge-filled(info);
+}
+
+.mantine-Badge-root.badge-root--info[data-variant='light'] {
+  @include badge-light(info);
+}
+
+.mantine-Badge-root.badge-root--info[data-variant='outline'] {
+  @include badge-outline(info);
+}
+
+.mantine-Badge-root.badge-root--info[data-variant='subtle'] {
+  @include badge-subtle(info);
+}
+
+.mantine-Badge-root.badge-root--info[data-variant='transparent'] {
+  @include badge-transparent(info);
+}
+
+/* SUCCESS */
+.mantine-Badge-root.badge-root--success[data-variant='filled'] {
+  @include badge-filled(success);
+}
+
+.mantine-Badge-root.badge-root--success[data-variant='light'] {
+  @include badge-light(success);
+}
+
+.mantine-Badge-root.badge-root--success[data-variant='outline'] {
+  @include badge-outline(success);
+}
+
+.mantine-Badge-root.badge-root--success[data-variant='subtle'] {
+  @include badge-subtle(success);
+}
+
+.mantine-Badge-root.badge-root--success[data-variant='transparent'] {
+  @include badge-transparent(success);
+}
+
+/* WARNING */
+.mantine-Badge-root.badge-root--warning[data-variant='filled'] {
+  @include badge-filled(warning);
+}
+
+.mantine-Badge-root.badge-root--warning[data-variant='light'] {
+  @include badge-light(warning);
+}
+
+.mantine-Badge-root.badge-root--warning[data-variant='outline'] {
+  @include badge-outline(warning);
+}
+
+.mantine-Badge-root.badge-root--warning[data-variant='subtle'] {
+  @include badge-subtle(warning);
+}
+
+.mantine-Badge-root.badge-root--warning[data-variant='transparent'] {
+  @include badge-transparent(warning);
+}
+
+/* DANGER */
+.mantine-Badge-root.badge-root--danger[data-variant='filled'] {
+  @include badge-filled(danger);
+}
+
+.mantine-Badge-root.badge-root--danger[data-variant='light'] {
+  @include badge-light(danger);
+}
+
+.mantine-Badge-root.badge-root--danger[data-variant='outline'] {
+  @include badge-outline(danger);
+}
+
+.mantine-Badge-root.badge-root--danger[data-variant='subtle'] {
+  @include badge-subtle(danger);
+}
+
+.mantine-Badge-root.badge-root--danger[data-variant='transparent'] {
+  @include badge-transparent(danger);
+}
+
+/* PRIMARY */
+.mantine-Badge-root.badge-root--primary[data-variant='filled'] {
+  @include badge-filled(primary);
+}
+
+.mantine-Badge-root.badge-root--primary[data-variant='light'] {
+  @include badge-light(primary);
+}
+
+.mantine-Badge-root.badge-root--primary[data-variant='outline'] {
+  @include badge-outline(primary);
+}
+
+.mantine-Badge-root.badge-root--primary[data-variant='subtle'] {
+  @include badge-subtle(primary);
+}
+
+.mantine-Badge-root.badge-root--primary[data-variant='transparent'] {
+  @include badge-transparent(primary);
+}
