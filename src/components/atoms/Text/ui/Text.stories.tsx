@@ -1,3 +1,5 @@
+import { Flex } from '@mantine/core'
+
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { TTextProps } from '../lib'
@@ -12,6 +14,7 @@ const meta: Meta<typeof Text> = {
       control: { type: 'select' },
       options: ['primary', 'secondary', 'muted', 'inverted', 'info', 'success', 'warning', 'danger'],
     },
+    size: { control: { type: 'select' }, options: ['xs2', 'xs', 'sm', 'md', 'lg', 'xl', 'xl2'] },
   },
 }
 
@@ -23,12 +26,13 @@ export const Default: Story = {
   args: {
     children: 'Text',
     color: 'primary',
+    size: 'md',
   },
 }
 
 export const Colors: Story = {
   render: (args: TTextProps) => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+    <Flex direction="column" gap="sm">
       <Text {...args} color="primary">
         Primary
       </Text>
@@ -38,7 +42,7 @@ export const Colors: Story = {
       <Text {...args} color="muted">
         Muted
       </Text>
-      <Text {...args} color="inverted" style={{ background: 'var(--bg-base)' }}>
+      <Text {...args} color="inverted">
         Inverted
       </Text>
       <Text {...args} color="info">
@@ -53,9 +57,41 @@ export const Colors: Story = {
       <Text {...args} color="danger">
         Danger
       </Text>
-    </div>
+    </Flex>
   ),
   args: {
     children: 'Text',
+  },
+}
+
+export const Variants: Story = {
+  render: (args: TTextProps) => (
+    <Flex direction="column" gap="sm">
+      <Text {...args} size="xs2">
+        Text XS2
+      </Text>
+      <Text {...args} size="xs">
+        Text XS
+      </Text>
+      <Text {...args} size="sm">
+        Text SM
+      </Text>
+      <Text {...args} size="md">
+        Text MD
+      </Text>
+      <Text {...args} size="lg">
+        Text LG
+      </Text>
+      <Text {...args} size="xl">
+        Text XL
+      </Text>
+      <Text {...args} size="xl2">
+        Text XL2
+      </Text>
+    </Flex>
+  ),
+  args: {
+    children: 'Text',
+    color: 'primary',
   },
 }

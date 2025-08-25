@@ -7,7 +7,7 @@ import { ColorVariants } from '@theme'
  * @description Mantine Text props extended with HTML attributes and semantic color variants
  */
 export type TTextProps = Omit<TextProps, 'color'> & {
-  color?: TextProps['color'] & ColorVariants['text']
+  color?: TextProps['c'] & ColorVariants['text']
 } & HTMLAttributes<HTMLElement>
 
 export type TContextValue = TTextProps
