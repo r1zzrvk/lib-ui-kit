@@ -66,6 +66,7 @@ export default defineConfig([
     },
     ignores: [
       'build/',
+      'dist/**',
       'node_modules/',
       '.prettierrc.json',
       'tsconfig.tsbuildinfo',
@@ -167,7 +168,13 @@ export default defineConfig([
       ],
 
       '@typescript-eslint/no-unused-expressions': ['error', {}],
-      '@typescript-eslint/no-unused-vars': 'error',
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+        },
+      ],
     },
   },
   {

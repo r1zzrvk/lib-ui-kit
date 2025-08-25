@@ -7,7 +7,7 @@ set -euo pipefail
 #   ./bump-version.sh patch   # 1.0.0 → 1.0.1
 #   ./bump-version.sh minor   # 1.0.1 → 1.1.0
 #   ./bump-version.sh major   # 1.1.0 → 2.0.0
-#   ./bump-version.sh 1.2.3   # принудительно в 1.2.3
+#   ./bump-version.sh 1.2.3-beta.0 # change to 1.2.3-beta.0
 
 if [ $# -ne 1 ]; then
   echo "Usage: $0 [major|minor|patch|<version>]"

@@ -37,6 +37,8 @@
       "@types": ["types"],
       "@utils": ["utils"],
       "@hooks": ["hooks"],
+      "@theme": ["theme"],
+      "@styles": ["styles"],
     }
   },
   "include": ["src"],

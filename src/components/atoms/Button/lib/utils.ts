@@ -1,9 +1,9 @@
-import { theme } from '@constants'
+import { theme } from '@theme'
 import { ESizes } from '@types'
 
 import { TButtonProps } from './types'
 
-export const getButtonTokens = (size: TButtonProps['size']): TButtonProps | undefined => {
+export const getButtonTokens = (size: TButtonProps['size']): Partial<TButtonProps> => {
   const { fontSizes, lineHeights, spacing, radius } = theme
 
   switch (size) {
@@ -43,5 +43,6 @@ export const getButtonTokens = (size: TButtonProps['size']): TButtonProps | unde
         lh: lineHeights?.[ESizes.XL],
       }
     default:
+      return {}
   }
 }

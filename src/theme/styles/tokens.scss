@@ -1,0 +1,18 @@
+@function token($name, $fallback: null) {
+  $var: '--' + $name;
+  @return if($fallback == null, var(#{$var}), var(#{$var}, #{$fallback}));
+}
+
+@mixin intent($name) {
+  background-color: token('#{$name}-solid');
+  color: token('#{$name}-contrast');
+  border: 1px solid token('#{$name}-border');
+  &:hover { background-color: token('#{$name}-hover');
+  border: 1px solid token('#{$name}-hover'); }
+}
+
+@mixin surface($bg: base, $text: primary, $border: subtle) {
+  background-color: token('bg-#{$bg}');
+  color: token('text-#{$text}');
+  border-color: token('border-#{$border}');
+}

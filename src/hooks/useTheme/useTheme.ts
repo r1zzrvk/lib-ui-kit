@@ -1,8 +1,7 @@
 import { useMemo } from 'react'
 
 import '@mantine/core/styles.css'
-import { TTheme } from '@types'
-import { theme } from '@constants'
+import { theme, TTheme } from '@theme'
 
 /**
  * @function Provides theme object and mantine styles to the application
