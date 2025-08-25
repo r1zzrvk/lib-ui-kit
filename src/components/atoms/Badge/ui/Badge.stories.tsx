@@ -2,6 +2,8 @@ import { Flex, Text } from '@mantine/core'
 
 import type { Meta, StoryFn, StoryObj } from '@storybook/react'
 
+import { Icon } from '@components/atoms'
+
 import { TBadgeProps } from '../lib'
 import { Badge } from './Badge'
 
@@ -166,5 +168,23 @@ export const Sizes: Story = {
   args: {
     variant: 'filled',
     color: 'primary',
+  },
+}
+
+export const WithIcon: Story = {
+  render: args => (
+    <Flex gap="md" align="center">
+      <Badge {...args} leftSection={<Icon icon="check" size="xs" weight="regular" />}>
+        With icon
+      </Badge>
+      <Badge {...args} rightSection={<Icon icon="check" size="xs" weight="regular" />}>
+        With icon
+      </Badge>
+    </Flex>
+  ),
+  args: {
+    variant: 'filled',
+    color: 'primary',
+    size: 'md',
   },
 }
