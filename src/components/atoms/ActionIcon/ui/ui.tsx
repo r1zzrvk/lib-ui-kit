@@ -19,12 +19,12 @@ export const MantineActionIcon: FC<TActionIconProps> = ({ children }) => {
   const intent =
     data.color && ['info', 'success', 'warning', 'danger', 'primary', 'muted'].includes(String(data.color))
       ? String(data.color)
-      : null
+      : 'primary'
 
   const rootClass = clsx(
     'action-icon-root',
     intent && `action-icon-root--${intent}`,
-    data.size && `action-icon-root--${data.size}`,
+    data.size && `action-icon-size--${data.size}`,
   )
 
   const mergedClassNames: TActionIconProps['classNames'] = {
@@ -32,7 +32,7 @@ export const MantineActionIcon: FC<TActionIconProps> = ({ children }) => {
     root: clsx(typeof data.classNames === 'object' ? data.classNames?.root : '', rootClass),
   }
 
-  const { classNames: _, icon, ...actionIconProps } = data
+  const { classNames: _classNames, icon, ...actionIconProps } = data
 
   const iconContent = icon ? <Icon icon={icon} size={data.size} weight={data.weight} /> : children
 
