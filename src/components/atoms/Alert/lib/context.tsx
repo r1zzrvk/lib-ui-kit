@@ -11,8 +11,8 @@ export const useAlertContext = (): TContextValue => {
 export const ContextProvider: FC<TProviderProps> = ({ children, value }) => {
   const contextValue = useMemo<TContextValue>(() => {
     const base: TAlertProps = {
-      color: 'primary',
-      variant: 'filled',
+      color: 'info',
+      variant: 'default',
       ...value,
     }
 

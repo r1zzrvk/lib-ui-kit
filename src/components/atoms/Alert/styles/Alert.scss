@@ -2,7 +2,7 @@
 @use '../../../../styles/alert-mixins.scss' as *;
 
 .alert-root {
-  @include alert-filled(primary);
+  @include alert-default();
 }
 
 .mantine-Alert-root[data-variant='default'] {
@@ -75,21 +75,4 @@
 
 .mantine-Alert-root.alert-root--danger[data-variant='transparent'] {
   @include alert-transparent(danger);
-}
-
-/* PRIMARY */
-.mantine-Alert-root.alert-root--primary[data-variant='filled'] {
-  @include alert-filled(primary);
-}
-
-.mantine-Alert-root.alert-root--primary[data-variant='light'] {
-  @include alert-light(primary);
-}
-
-.mantine-Alert-root.alert-root--primary[data-variant='outline'] {
-  @include alert-outline(primary);
-}
-
-.mantine-Alert-root.alert-root--primary[data-variant='transparent'] {
-  @include alert-transparent(primary);
 }

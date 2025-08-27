@@ -2,20 +2,22 @@ import { Stack } from '@mantine/core'
 
 import type { Meta, StoryObj } from '@storybook/react'
 
+import { Icon, Text } from '@components/atoms'
+
 import { Alert } from './Alert'
 
 const meta: Meta<typeof Alert> = {
-  title: 'Atoms/Alert',
+  title: 'Atoms/Data Display/Alert',
   component: Alert,
   tags: ['autodocs'],
   argTypes: {
     variant: {
       control: { type: 'select' },
-      options: ['filled', 'light', 'outline', 'transparent', 'default'],
+      options: ['default', 'filled', 'light', 'outline', 'transparent'],
     },
     color: {
       control: { type: 'select' },
-      options: ['primary', 'info', 'success', 'warning', 'danger'],
+      options: ['info', 'success', 'warning', 'danger'],
     },
   },
 }
@@ -26,33 +28,46 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
-    children: 'Alert message',
-    color: 'primary',
-    variant: 'filled',
+    title: 'Alert title',
+    children: (
+      <Text color="primary" size="sm">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. At officiis, quae tempore necessitatibus placeat
+        saepe.
+      </Text>
+    ),
+    variant: 'default',
+    icon: <Icon icon="info" />,
   },
 }
 
 export const Variants: Story = {
   render: args => (
     <Stack>
-      <Alert {...args} variant="filled" color="primary">
-        Filled
-      </Alert>
-      <Alert {...args} variant="light" color="primary">
-        Light
-      </Alert>
-      <Alert {...args} variant="outline" color="primary">
-        Outline
-      </Alert>
-      <Alert {...args} variant="transparent" color="primary">
-        Transparent
-      </Alert>
-      <Alert {...args} variant="default">
-        Default
-      </Alert>
+      <Alert
+        {...args}
+        variant="filled"
+        children={
+          <Text color="inverted" size="sm">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. At officiis, quae tempore necessitatibus placeat
+            saepe.
+          </Text>
+        }
+      />
+      <Alert {...args} variant="light" />
+      <Alert {...args} variant="outline" />
+      <Alert {...args} variant="transparent" />
+      <Alert {...args} variant="default" />
     </Stack>
   ),
   args: {
-    color: 'primary',
+    color: 'info',
+    title: 'Alert title',
+    children: (
+      <Text color="primary" size="sm">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. At officiis, quae tempore necessitatibus placeat
+        saepe.
+      </Text>
+    ),
+    icon: <Icon icon="info" />,
   },
 }
