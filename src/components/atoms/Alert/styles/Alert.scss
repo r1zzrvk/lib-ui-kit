@@ -1,0 +1,95 @@
+@use '../../../../theme/styles/tokens.scss' as *;
+@use '../../../../styles/alert-mixins.scss' as *;
+
+.alert-root {
+  @include alert-filled(primary);
+}
+
+.mantine-Alert-root[data-variant='default'] {
+  @include alert-default();
+}
+
+/* INFO */
+.mantine-Alert-root.alert-root--info[data-variant='filled'] {
+  @include alert-filled(info);
+}
+
+.mantine-Alert-root.alert-root--info[data-variant='light'] {
+  @include alert-light(info);
+}
+
+.mantine-Alert-root.alert-root--info[data-variant='outline'] {
+  @include alert-outline(info);
+}
+
+.mantine-Alert-root.alert-root--info[data-variant='transparent'] {
+  @include alert-transparent(info);
+}
+
+/* SUCCESS */
+.mantine-Alert-root.alert-root--success[data-variant='filled'] {
+  @include alert-filled(success);
+}
+
+.mantine-Alert-root.alert-root--success[data-variant='light'] {
+  @include alert-light(success);
+}
+
+.mantine-Alert-root.alert-root--success[data-variant='outline'] {
+  @include alert-outline(success);
+}
+
+.mantine-Alert-root.alert-root--success[data-variant='transparent'] {
+  @include alert-transparent(success);
+}
+
+/* WARNING */
+.mantine-Alert-root.alert-root--warning[data-variant='filled'] {
+  @include alert-filled(warning);
+}
+
+.mantine-Alert-root.alert-root--warning[data-variant='light'] {
+  @include alert-light(warning);
+}
+
+.mantine-Alert-root.alert-root--warning[data-variant='outline'] {
+  @include alert-outline(warning);
+}
+
+.mantine-Alert-root.alert-root--warning[data-variant='transparent'] {
+  @include alert-transparent(warning);
+}
+
+/* DANGER */
+.mantine-Alert-root.alert-root--danger[data-variant='filled'] {
+  @include alert-filled(danger);
+}
+
+.mantine-Alert-root.alert-root--danger[data-variant='light'] {
+  @include alert-light(danger);
+}
+
+.mantine-Alert-root.alert-root--danger[data-variant='outline'] {
+  @include alert-outline(danger);
+}
+
+.mantine-Alert-root.alert-root--danger[data-variant='transparent'] {
+  @include alert-transparent(danger);
+}
+
+/* PRIMARY */
+.mantine-Alert-root.alert-root--primary[data-variant='filled'] {
+  @include alert-filled(primary);
+}
+
+.mantine-Alert-root.alert-root--primary[data-variant='light'] {
+  @include alert-light(primary);
+}
+
+.mantine-Alert-root.alert-root--primary[data-variant='outline'] {
+  @include alert-outline(primary);
+}
+
+.mantine-Alert-root.alert-root--primary[data-variant='transparent'] {
+  @include alert-transparent(primary);
+}

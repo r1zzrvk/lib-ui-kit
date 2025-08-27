@@ -37,10 +37,10 @@ const bg = {
     'bg.base': 'dark.7',
     'bg.raised': 'dark.6',
     'bg.soft': 'dark.5',
-    'bg.info': 'blue.11',
-    'bg.warning': 'yellow.11',
-    'bg.success': 'green.11',
-    'bg.danger': 'red.11',
+    'bg.info': 'blue.9',
+    'bg.warning': 'yellow.9',
+    'bg.success': 'green.9',
+    'bg.danger': 'red.9',
   },
 }
 
