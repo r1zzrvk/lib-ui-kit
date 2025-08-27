@@ -13,6 +13,7 @@ export const ContextProvider: FC<TProviderProps> = ({ children, value }) => {
     const base: TAlertProps = {
       color: 'info',
       variant: 'default',
+      radius: 'xl',
       ...value,
     }
 
