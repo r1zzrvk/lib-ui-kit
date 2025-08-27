@@ -1,0 +1,34 @@
+@use '../../../../theme/styles/tokens.scss' as *;
+
+.box-root {
+  background-color: token('bg-base');
+  color: token('text-primary');
+  border: 1px solid token('bg-base');
+}
+
+/* Color tokens */
+.box-root--color-primary { color: token('text-primary'); }
+.box-root--color-secondary { color: token('text-secondary'); }
+.box-root--color-muted { color: token('text-muted'); }
+.box-root--color-inverted { color: token('text-inverted'); }
+.box-root--color-info { color: token('text-info'); }
+.box-root--color-success { color: token('text-success'); }
+.box-root--color-warning { color: token('text-warning'); }
+.box-root--color-danger { color: token('text-danger'); }
+
+/* Background tokens with default border color */
+.box-root--bg-base { background-color: token('bg-base'); border-color: token('bg-base'); }
+.box-root--bg-raised { background-color: token('bg-raised'); border-color: token('bg-raised'); }
+.box-root--bg-soft { background-color: token('bg-soft'); border-color: token('bg-soft'); }
+.box-root--bg-info { background-color: token('bg-info'); border-color: token('bg-info'); }
+.box-root--bg-success { background-color: token('bg-success'); border-color: token('bg-success'); }
+.box-root--bg-warning { background-color: token('bg-warning'); border-color: token('bg-warning'); }
+.box-root--bg-danger { background-color: token('bg-danger'); border-color: token('bg-danger'); }
+
+/* Border tokens */
+.box-root--border-subtle { border-color: token('border-subtle'); }
+.box-root--border-strong { border-color: token('border-strong'); }
+.box-root--border-info { border-color: token('border-info'); }
+.box-root--border-success { border-color: token('border-success'); }
+.box-root--border-warning { border-color: token('border-warning'); }
+.box-root--border-danger { border-color: token('border-danger'); }
