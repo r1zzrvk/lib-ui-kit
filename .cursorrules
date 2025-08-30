@@ -1,0 +1,268 @@
+# UI Kit Development Rules
+
+You are an expert React developer working on a TypeScript-based UI Kit library built with Mantine, Vite, and Storybook. Follow these architectural principles and conventions strictly.
+
+## Project Architecture
+
+### Atomic Design Methodology
+- **Atoms**: Basic building blocks (buttons, inputs, icons, typography)
+- **Molecules**: Combinations of atoms (labeled inputs, dropdowns)
+- **Organisms**: Complex structures (headers, product cards)
+- **Templates**: Page layout skeletons
+
+### Project Structure
+```
+src/
+├── components/     # UI elements following Atomic Design
+├── constants/      # Token values, breakpoints, enums, static config
+├── hooks/          # Custom React hooks
+├── templates/      # Layout-related templates
+├── types/          # TypeScript types and interfaces
+├── utils/          # Shared utility functions
+└── theme/          # Theme configuration and tokens
+```
+
+## Component Structure
+
+Every component must follow this exact folder structure:
+
+```
+src/components/[ComponentName]/
+├── ui/
+│   ├── [ComponentName].tsx      # Main UI component
+│   ├── [ComponentName].stories.tsx  # Storybook stories
+│   └── index.ts                 # Exports
+├── lib/
+│   ├── constants.ts             # Component constants
+│   ├── context.tsx              # React Context logic
+│   ├── types.ts                 # TypeScript types
+│   ├── utils.ts                 # Component utilities
+│   └── index.ts                 # Lib exports
+├── styles/
+│   ├── [ComponentName].scss     # Component styles
+│   └── index.scss               # Style exports
+├── tests/
+│   └── [ComponentName].test.tsx # Component tests
+├── components/                  # Child components
+│   └── [ChildName]/
+│       ├── [ChildName].tsx
+│       └── index.ts
+└── index.ts                     # Main component export
+```
+
+## TypeScript Conventions
+
+### Naming Conventions
+- **Props types**: `T[ComponentName]Props` (e.g., `TButtonProps`, `TAvatarProps`)
+- **Context types**: `TContextValue`, `TProviderProps`
+- **Interfaces**: `I[Name]` (e.g., `IContext`, `IComponentProps`)
+- **Enums**: `E[Name]` (e.g., `ESizes`, `EColorScheme`, `ETabs`)
+- **Theme types**: `T[Name]` (e.g., `TTheme`)
+
+### Type Definitions
+- Always extend Mantine component props when possible
+- Use `Omit` to exclude conflicting props and redefine them
+- Example:
+```typescript
+export type TButtonProps = Omit<ButtonProps, 'color'> & {
+  color?: ButtonProps['color'] & ColorVariants['interaction']
+} & ButtonHTMLAttributes<HTMLButtonElement>
+```
+
+### Enums
+- Use string enums with descriptive values
+- Example:
+```typescript
+export enum ESizes {
+  XS4 = 'xs4',
+  XS3 = 'xs3',
+  XS2 = 'xs2',
+  XS = 'xs',
+  SM = 'sm',
+  MD = 'md',
+  LG = 'lg',
+  XL = 'xl',
+  XL2 = 'xl2',
+  XL3 = 'xl3',
+  XL4 = 'xl4',
+}
+```
+
+## Component Development
+
+### Context over Prop Drilling
+- Use React Context API for shared state
+- Create context in `lib/context.tsx`
+- Pattern:
+```typescript
+const ComponentContext = createContext<TContextValue>({})
+
+export function useComponentContext(): TContextValue {
+  return useContext(ComponentContext)
+}
+
+export const ContextProvider = ({ children, value }: TProviderProps) => {
+  const contextValue = useMemo<TContextValue>(() => {
+    // Context logic here
+  }, [value])
+
+  return <ComponentContext.Provider value={contextValue}>{children}</ComponentContext.Provider>
+}
+```
+
+### Component Implementation
+- Main component goes in `ui/[ComponentName].tsx`
+- Always use TypeScript with strict typing
+- Support both light and dark themes
+- Make components responsive by design
+- Example structure:
+```typescript
+import { forwardRef } from 'react'
+import { Button } from '@mantine/core'
+import { TButtonProps } from '../lib'
+
+export const ButtonComponent = forwardRef<HTMLButtonElement, TButtonProps>(
+  ({ children, ...props }, ref) => {
+    return (
+      <Button ref={ref} {...props}>
+        {children}
+      </Button>
+    )
+  }
+)
+
+ButtonComponent.displayName = 'ButtonComponent'
+```
+
+### Styling Guidelines
+- Use SCSS for custom styles in `styles/[ComponentName].scss`
+- Leverage Mantine's theming utilities for colors and spacing
+- Support theme tokens from `theme/constants/`
+- Use CSS custom properties for theme-driven styles
+- Follow BEM methodology for class naming when needed
+
+## Theme Integration
+
+### Theme Structure
+- Tokens defined in `theme/constants/tokens.ts`
+- Semantic tokens in `theme/constants/semanticTokens.ts`
+- Theme types in `theme/types/types.ts`
+- Use `useTheme()` hook for accessing theme values
+
+### Color System
+- Support semantic color variants: `info`, `success`, `warning`, `danger`
+- Support interaction colors: `primary`, `secondary`, `muted`, `inverted`
+- Use `ColorVariants` type for consistent color props
+
+## Storybook Integration
+
+### Stories Structure
+- Stories go in `ui/[ComponentName].stories.tsx`
+- Use CSF3 format
+- Include all component variants and states
+- Add proper controls and documentation
+- Example:
+```typescript
+import type { Meta, StoryObj } from '@storybook/react'
+import { Button } from './Button'
+
+const meta: Meta<typeof Button> = {
+  title: 'Atoms/Button',
+  component: Button,
+  parameters: {
+    layout: 'centered',
+  },
+  tags: ['autodocs'],
+}
+
+export default meta
+type Story = StoryObj<typeof meta>
+
+export const Default: Story = {
+  args: {
+    children: 'Button',
+  },
+}
+```
+
+## Testing Requirements
+
+### Test Structure
+- Tests go in `tests/[ComponentName].test.tsx`
+- Use Vitest for testing
+- Test component rendering, props, and interactions
+- Include accessibility tests
+- Test theme integration
+
+## Import/Export Conventions
+
+### Path Aliases
+- Use `@theme` for theme imports
+- Use `@types` for type imports
+- Use `@components` for component imports
+- Use `@utils` for utility imports
+- Use `@constants` for constant imports
+- Use `@hooks` for hook imports
+
+### Export Pattern
+- Each folder has an `index.ts` file for exports
+- Main component export from root `index.ts`
+- Lib exports from `lib/index.ts`
+- UI exports from `ui/index.ts`
+
+## Code Quality Standards
+
+### Linting and Type Checking
+- Run `npm run lint` for code style
+- Run `npm run type-check` for type correctness
+- Run `npm run full-test` for comprehensive testing
+- Follow ESLint and Prettier configurations
+
+### Documentation
+- Use JSDoc comments for all public APIs
+- Document complex logic and type definitions
+- Include usage examples in component docs
+- Maintain clear and descriptive commit messages
+
+## Development Principles
+
+### Core Principles
+1. **Reusability**: Components must work across different contexts
+2. **Clear Structure**: Predictable and isolated folder layout
+3. **Theme Support**: Full light/dark mode support with custom themes
+4. **Visual Consistency**: Consistent design language across all elements
+5. **Accessibility**: WCAG compliant and screen reader friendly
+6. **Responsiveness**: Mobile-first, works on all screen sizes
+7. **Performance**: Optimized for production use
+8. **Type Safety**: Strict TypeScript with comprehensive type coverage
+
+### Best Practices
+- Prefer composition over inheritance
+- Use semantic HTML elements
+- Implement proper ARIA attributes
+- Support keyboard navigation
+- Handle loading and error states
+- Provide meaningful default props
+- Use memoization for expensive computations
+- Follow React best practices and hooks rules
+
+### Mantine Integration
+- Extend Mantine components, don't replace them
+- Use Mantine's theming system as the foundation
+- Leverage Mantine hooks and utilities
+- Maintain compatibility with Mantine ecosystem
+- Override styles through theme configuration when possible
+
+## File Creation Guidelines
+
+When creating new components:
+1. Start with the component folder structure
+2. Define types in `lib/types.ts` first
+3. Create context if needed in `lib/context.tsx`
+4. Implement main component in `ui/[ComponentName].tsx`
+5. Add styles in `styles/[ComponentName].scss`
+6. Create Storybook stories in `ui/[ComponentName].stories.tsx`
+7. Write tests in `tests/[ComponentName].test.tsx`
+8. Export everything through appropriate `index.ts` files
+
+Always maintain consistency with existing patterns and follow the established architecture. Every component should be self-contained, well-documented, and thoroughly tested.

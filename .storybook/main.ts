@@ -1,4 +1,8 @@
 import type { StorybookConfig } from '@storybook/react-vite';
+const viteTsconfig = require('vite-tsconfig-paths');
+const tsconfigPaths = viteTsconfig.default;
+
+const { mergeConfig } = require('vite');
 
 const config: StorybookConfig = {
   "stories": [
@@ -9,11 +13,18 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@storybook/addon-onboarding",
     "@chromatic-com/storybook",
-    "@storybook/experimental-addon-test"
+    "@storybook/experimental-addon-test",
+    '@storybook/addon-styling-webpack',
+    'storybook-dark-mode',
   ],
   "framework": {
     "name": "@storybook/react-vite",
     "options": {}
-  }
+  },
+  async viteFinal(config) {
+    return mergeConfig(config, {
+      plugins: [tsconfigPaths()],
+    });
+  },
 };
 export default config;

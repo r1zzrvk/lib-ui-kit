@@ -1,0 +1,37 @@
+@use '../../../../theme/styles/tokens.scss' as *;
+
+.text-root {
+  color: token('text-primary');
+}
+
+.text-root--primary {
+  color: token('text-primary');
+}
+
+.text-root--secondary {
+  color: token('text-secondary');
+}
+
+.text-root--muted {
+  color: token('text-muted');
+}
+
+.text-root--inverted {
+  color: token('text-inverted');
+}
+
+.text-root--info {
+  color: token('text-info');
+}
+
+.text-root--success {
+  color: token('text-success');
+}
+
+.text-root--warning {
+  color: token('text-warning');
+}
+
+.text-root--danger {
+  color: token('text-danger');
+}

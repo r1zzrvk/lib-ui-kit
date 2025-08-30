@@ -1,0 +1,146 @@
+@use '../../../../styles/button-mixins.scss' as *;
+
+.action-icon-root {
+  display: flex;
+  // Primary color variants
+  &--primary {
+    &[data-variant="filled"] {
+      @include button-filled('primary');
+    }
+    &[data-variant="light"] {
+      @include button-light('primary');
+    }
+    &[data-variant="outline"] {
+      @include button-outline('primary');
+    }
+    &[data-variant="subtle"] {
+      @include button-subtle('primary');
+    }
+    &[data-variant="transparent"] {
+      @include button-transparent('primary');
+    }
+  }
+
+  // Info color variants
+  &--info {
+    &[data-variant="filled"] {
+      @include button-filled('info');
+    }
+    &[data-variant="light"] {
+      @include button-light('info');
+    }
+    &[data-variant="outline"] {
+      @include button-outline('info');
+    }
+    &[data-variant="subtle"] {
+      @include button-subtle('info');
+    }
+    &[data-variant="transparent"] {
+      @include button-transparent('info');
+    }
+  }
+
+  // Success color variants
+  &--success {
+    &[data-variant="filled"] {
+      @include button-filled('success');
+    }
+    &[data-variant="light"] {
+      @include button-light('success');
+    }
+    &[data-variant="outline"] {
+      @include button-outline('success');
+    }
+    &[data-variant="subtle"] {
+      @include button-subtle('success');
+    }
+    &[data-variant="transparent"] {
+      @include button-transparent('success');
+    }
+  }
+
+  // Warning color variants
+  &--warning {
+    &[data-variant="filled"] {
+      @include button-filled('warning');
+    }
+    &[data-variant="light"] {
+      @include button-light('warning');
+    }
+    &[data-variant="outline"] {
+      @include button-outline('warning');
+    }
+    &[data-variant="subtle"] {
+      @include button-subtle('warning');
+    }
+    &[data-variant="transparent"] {
+      @include button-transparent('warning');
+    }
+  }
+
+  // Danger color variants
+  &--danger {
+    &[data-variant="filled"] {
+      @include button-filled('danger');
+    }
+    &[data-variant="light"] {
+      @include button-light('danger');
+    }
+    &[data-variant="outline"] {
+      @include button-outline('danger');
+    }
+    &[data-variant="subtle"] {
+      @include button-subtle('danger');
+    }
+    &[data-variant="transparent"] {
+      @include button-transparent('danger');
+    }
+  }
+
+  // Default variant (gray)
+  &[data-variant="default"] {
+    @include action-icon-default();
+  }
+
+  // Disabled state
+  &:disabled,
+  &[data-disabled] {
+    @include button-disabled();
+  }
+}
+
+// Size variants
+.action-icon-size {
+  &--xs {
+    --ai-size: 18px;
+    --ai-radius: 6px;
+  }
+  
+  &--sm {
+    --ai-size: 24px;
+    --ai-radius: 8px;
+  }
+  
+  &--md {
+    --ai-size: 32px;
+    --ai-radius: 10px;
+  }
+  
+  &--lg {
+    --ai-size: 40px;
+    --ai-radius: 12px;
+  }
+  
+  &--xl {
+    --ai-size: 48px;
+    --ai-radius: 14px;
+  }
+}
+
+.action-icon-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}

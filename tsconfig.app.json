@@ -4,9 +4,17 @@
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
+    "allowJs": true,
     "skipLibCheck": true,
-
+    "forceConsistentCasingInFileNames": true,
+    "noUnusedParameters": false,
+    "removeComments": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "resolveJsonModule": true,
+    "incremental": true,
+    "baseUrl": "src",
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
@@ -18,9 +26,20 @@
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+    "paths": {
+      "@components/atoms": ["components/atoms"],
+      "@components/molecules": ["components/molecules"],
+      "@components/organism": ["components/organism"],
+      "@constants": ["constants"],
+      "@templates": ["templates"],
+      "@types": ["types"],
+      "@utils": ["utils"],
+      "@hooks": ["hooks"],
+      "@theme": ["theme"],
+      "@styles": ["styles"],
+    }
   },
-  "include": ["src"]
+  "include": ["src"],
 }
