@@ -1,0 +1,40 @@
+@use '../theme/styles/tokens.scss' as *;
+
+@mixin alert-base() {
+  transition: background-color .3s ease, border-color .3s ease, color .15s ease;
+  border-width: 1px;
+  border-style: solid;
+}
+
+@mixin alert-filled($intent) {
+  @include alert-base();
+  background-color: token('#{$intent}-solid');
+  color: token('#{$intent}-contrast');
+  border-color: token('#{$intent}-border');
+}
+
+@mixin alert-light($intent) {
+  @include alert-base();
+  background-color: token('#{$intent}-soft');
+  color: token('#{$intent}-solid');
+  border-color: token('#{$intent}-soft');
+}
+
+@mixin alert-outline($intent) {
+  @include alert-base();
+  background-color: transparent;
+  color: token('#{$intent}-solid');
+  border-color: token('#{$intent}-border');
+}
+
+@mixin alert-transparent($intent) {
+  @include alert-base();
+  background-color: transparent;
+  color: token('#{$intent}-solid');
+  border-color: transparent;
+}
+
+@mixin alert-default() {
+  @include alert-base();
+  @include surface(soft, primary, subtle);
+}

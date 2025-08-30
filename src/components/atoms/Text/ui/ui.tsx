@@ -11,10 +11,10 @@ export const MantineText: FC<TTextProps> = ({ children }) => {
   const colorClass = getTextColorClass(data.color)
   const rootClass = clsx('text-root', colorClass)
 
-  const { className, color: _color, ...textProps } = data
+  const { className, color: c, ...textProps } = data
 
   return (
-    <MantineBaseText {...textProps} className={clsx(className, rootClass)}>
+    <MantineBaseText c={!colorClass ? c : undefined} {...textProps} className={clsx(className, rootClass)}>
       {children}
     </MantineBaseText>
   )

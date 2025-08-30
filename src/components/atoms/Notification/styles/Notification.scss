@@ -1,0 +1,7 @@
+@use '../../../../theme/styles/tokens.scss' as *;
+
+.notification-root {
+  background-color: token('bg-raised');
+  color: token('text-primary');
+  border: 1px solid token('border-subtle');
+}
